@@ -1,0 +1,429 @@
+<div class="panel panel-default owner owner2">
+<header class="panel-heading owner-header">
+    <button type="button" class="btn btn-default btn-lg collapsing-header" data-toggle="collapse" data-target="#owner_<%= cid %>"><i class="glyphicon glyphicon-collapse-up"></i>
+        <span class="ownerHeaderText">Your Information</span></button>  <button type="button" class="remove-owner btn btn-default btn-xs pull-right hide">Remove</button>
+
+</header>
+
+<div id="owner_<%= cid %>" class="collapse in panel-body">
+<div class="actions actions-signin clearfix signInSection">
+    <div class="pull-right">
+        Existing Customer
+        <a class="btn btn-primary signIn">Sign In</a><br>
+        <div class="pull-right">Search Customer <a class="btn-green" href="#funds-Searchl" data-toggle="modal" data-dismiss="modal">Search</a> </div>
+    </div>
+</div>
+<div class="page-info fieldsRequiredCopy">
+	<p class="pull-right text-danger">All fields required except where stated as optional.</p>
+</div>
+
+<fieldset class="form-group row accountSelectionGroup hide">
+    <div class="col-md-10 col-md-offset-2">
+        <p>Add this joint owner to following account(s).</p>
+        <%
+        _.each(potentialAccounts, function(account) {
+            var checked = _.contains(associatedAccountCIDs, account.cid) ? "checked" : "";
+        %>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" class="selectAccount_<%= account.cid %>" <%= checked %>>
+                <span class="slick"><span></span><%= account.productName %>: $<%= account.formattedFundingAmount %></span>
+            </label>
+        </div>
+        <% }); %>
+        <!-- error -->
+        <div class="form-group-error has-error hide accountSelectionError">
+            <small class="help-block">Select at least one account to add this joint owner.</small>
+        </div>
+    </div>
+</fieldset>
+
+<span class="mainEditSection">
+<!-- :BEGIN: Personal -->
+<header class="form-header">
+    <h4>Personal Information</h4>
+</header>
+<fieldset class="row">
+    <div class="col-md-10 col-md-offset-2">
+        <!-- Name (standard, mult-col) -->
+        <div class="form-group-set row">
+				<div class="col-md-12">
+            	<div class="row">
+                    <input type="hidden" id="nameTitle_<%= cid %>" value="" />
+		            <div class="form-group col-md-4 nameFirstGroup">
+		                <label for="nameFirst_<%= cid %>" class="control-label">First Name</label>
+		                <input type="text" id="nameFirst_<%= cid %>" class="form-control" value="<%= nameFirst %>">
+		                <div class="form-group-error has-error hide nameFirstError">
+		                    <small class="help-block">Enter your first name.</small>
+		                </div>
+		            </div>
+		            <div class="form-group col-md-2">
+		                <label for="nameMI_<%= cid %>" class="control-label">M.I. (Optional)</label>
+		                <input type="text" id="nameMI_<%= cid %>" class="form-control" maxlength="1" value="<%= nameMI %>">
+		            </div>
+		            <div class="form-group col-md-4 nameLastGroup">
+		                <label for="nameLast_<%= cid %>" class="control-label">Last Name</label>
+		                <input type="text" id="nameLast_<%= cid %>" class="form-control" value="<%= nameLast %>">
+		                <div class="form-group-error has-error hide nameLastError">
+		                    <small class="help-block">Enter your last name.</small>
+		                </div>
+		            </div>
+                    <input type="hidden" id="nameSuffix_<%= cid %>" value="" />
+		          </div>
+
+
+            </div>
+        </div>
+        <!-- Date of Birth (inline for lock icon) -->
+        <div class="form-group-set row">
+            <div class="col-md-12">
+                <div class="row">
+							<div class="col-md-9">
+								<label class="control-label dobMonthGroup dobDayGroup dobYearGroup">Date of Birth</label>
+								<div class="form-inline">
+									<div class="form-group dobMonthGroup" style="width: 70px;">
+										<div class="input-group">
+											<input type="text" id="dobMonth_<%= cid %>" class="form-control dobM" placeholder="MM" value="<%= dobMonth %>" maxlength="2">
+											<span class="input-group-addon">/</span>
+										</div>
+									</div>
+									<div class="form-group dobDayGroup" style="width: 70px;">
+										<div class="input-group">
+											<input type="text" id="dobDay_<%= cid %>" class="form-control dobD" placeholder="DD" value="<%= dobDay %>" maxlength="2">
+											<span class="input-group-addon">/</span>
+										</div>
+									</div>
+									<div class="form-group dobYearGroup" style="width: 100px;">
+										<div class="input-group">
+											<input type="text" id="dobYear_<%= cid %>" class="form-control dobY" placeholder="YYYY" value="<%= dobYear %>" maxlength="4">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+										</div>
+									</div>
+								</div>
+                    		<small class="help-block text-muted">We&rsquo;re required by federal law to keep your personal information in our records, such as your date of birth. We&rsquo;re committed to keeping our customers&rsquo; information secure at all times.</small>
+                            <div class="form-group-error has-error hide dobMonthError dobDayError dobYearError">
+                                <small class="help-block">Enter your Date of Birth.</small>
+                            </div>
+                    	
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SSN (inline for lock icon) -->
+        <div class="form-group-set row">
+            <div class="col-md-12">
+                <div class="row">
+							<div class="col-md-9">
+								<label class="control-label ssn1Group ssn2Group ssn3Group">Social Security Number</label>
+								<div class="form-inline">
+									<div class="form-group ssn1Group" style="width: 70px;">
+										<div class="input-group">
+											<input type="text" id="ssn1_<%= cid %>" class="form-control" placeholder="XXX" value="<%= ssn1 %>" maxlength="3">
+											<span class="input-group-addon">-</span>
+										</div>
+									</div>
+									<div class="form-group ssn2Group" style="width: 70px;">
+										<div class="input-group">
+											<input type="text" id="ssn2_<%= cid %>" class="form-control" placeholder="XX" value="<%= ssn2 %>" maxlength="2">
+											<span class="input-group-addon">-</span>
+										</div>
+									</div>
+									<div class="form-group ssn3Group" style="width: 100px;">
+										<div class="input-group">
+											<input type="text" id="ssn3_<%= cid %>" class="form-control" placeholder="XXXX" value="<%= ssn3 %>" maxlength="4">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+										</div>
+									</div>
+								</div>
+								<small class="help-block text-muted">We collect your social security number for tax reporting purposes. We&rsquo;re committed to keeping our customers&rsquo; information secure at all times.</small>
+                                <div class="form-group-error has-error hide ssn1Error1 ssn2Error2 ssn3Error">
+                                    <small class="help-block">Enter your social security number.</small>
+                                </div>
+							</div>
+                </div>
+            </div>
+        </div>
+        <!-- Occupation (standard) -->
+            <div class="form-group-set row occupationGroup">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="form-group col-md-9">
+                            <label for="occupation_<%= cid %>" class="control-label">Occupation</label>
+                            <select id="occupation_<%= cid %>" class="form-control">
+                                <option value="">Please select</option>
+                                <% var occupationOptions = ["Government Official", "Homemaker", "Military", "Professional", "Retired", "Student", "Trades"]; %>
+                                <%= writeOptions(occupationOptions, occupation) %>
+                            </select>
+                            <div class="form-group-error has-error hide occupationError">
+                                <small class="help-block">Select your occupation.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</fieldset>
+
+<!-- :BEGIN: Contact -->
+<header class="form-header">
+    <h4>Contact Information</h4>
+</header>
+<fieldset class="row">
+<div class="col-md-10 col-md-offset-2">
+    <!-- Phone (standard, multi-col) -->
+    <div class="form-group-set row">
+        <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4 ">
+            	<label class="control-label phoneNumber1Group phoneNumber2Group phoneNumber3Group">Primary Phone Number</label>
+            	<div class="form-inline">
+            		<div class="form-group phoneNumber1Group" style="width: 80px;">
+            			<div class="input-group">
+            				<span class="input-group-addon">(</span>
+            				<input type="text" id="phoneNumber1_<%= cid %>" class="form-control" value="<%= phoneNumber1 %>" maxlength="3">
+            				<span class="input-group-addon">) -</span>
+            			</div>
+            		</div>
+            		<div class="form-group phoneNumber2Group" style="width: 70px;">
+            			<div class="input-group">
+            				<input type="text" id="phoneNumber2_<%= cid %>" class="form-control" value="<%= phoneNumber2 %>" maxlength="3">
+            				<span class="input-group-addon">-</span>
+            			</div>
+            		</div>
+            		<div class="form-group phoneNumber3Group" style="width: 70px;">
+            			<div class="input-group">
+            				<input type="text" id="phoneNumber3_<%= cid %>" class="form-control" value="<%= phoneNumber3 %>" maxlength="4">
+            			</div>
+            		</div>
+            	</div>
+                <div class="form-group-error has-error hide phoneNumber1Error phoneNumber2Error phoneNumber3Error">
+                    <small class="help-block">Please enter your phone number.</small>
+                </div>
+            </div>
+            <div class="form-group col-md-3 phoneTypeGroup">
+                <label for="phoneType_<%= cid %>" class="control-label">Type</label>
+                <select id="phoneType_<%= cid %>" class="form-control">
+                	<option value="">Please select</option>
+                    <% var phoneOptions = ["Mobile", "Home", "Work"]; %>
+                    <%= writeOptions(phoneOptions, phoneType) %>
+                </select>
+                <div class="form-group-error has-error hide phoneTypeError">
+                    <small class="help-block">Select your phone number type.</small>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+    </div>
+    <!-- Email (standard) -->
+    <div class="form-group-set row emailGroup">
+        <div class="col-md-12">
+        		<div class="row">
+        			<div class="form-group col-md-9">
+           			 <label for="email_<%= cid %>" class="control-label">Email Address</label>
+           			 <input type="email" id="email_<%= cid %>" class="form-control" value="<%= email %>">
+            			<div class="form-group-error has-error hide emailError">
+                			<small class="help-block">Enter your e-mail address.</small>
+            			</div>
+            	</div>
+            </div>
+        </div>
+    </div>
+    <!-- Email Again (standard) -->
+    <div class="form-group-set row emailAgainGroup">
+        <div class="col-md-12">
+        		<div class="row">
+        			<div class="form-group col-md-9">
+            		<label for="emailAgain_<%= cid %>" class="control-label">Re-enter Email Address</label>
+            		<input type="email" id="emailAgain_<%= cid %>" class="form-control" value="<%= email %>">
+           			 <div class="form-group-error has-error hide emailAgainError">
+            		    <small class="help-block">E-mails do not match.</small>
+            		</div>
+            	</div>
+            </div>
+        </div>
+    </div>
+
+    <span class="homeAddressHolder"></span>
+
+    <!-- Address Q1 (standard) -->
+    <div class="form-group-set row needsPreviousAddressGroup">
+        <div class="col-md-12">
+        		<div class="row">
+        			<div class="form-group col-md-9">
+            		<label for="needsPreviousAddress_<%= cid %>" class="control-label">How long have you lived at the above address?</label>
+           			 <select id="needsPreviousAddress_<%= cid %>" class="form-control needsPreviousAddress">
+             		   <option value="">Please select</option>
+             		   <% var q1Options = [["no", "More than 1 year"], ["yes", "Less than 1 year"]]; %>
+             		   <%= writeOptions(q1Options, needsPreviousAddress) %>
+            		</select>
+            		<div class="form-group-error has-error hide needsPreviousAddressError">
+              		  <small class="help-block">Make a selection.</small>
+            		</div>
+            	</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- :BEGIN: Mailing Address -->
+    <div class="conditional previousAddressHolder <% if (!needsPreviousAddress) { %>hide<% } %>"></div>
+
+    <!-- Address Q2 (standard) -->
+    <div class="form-group-set row needsMailingAddressGroup">
+        <div class="col-md-12">
+        		<div class="row">
+        			<div class="form-group col-md-9">
+            		<label for="needsMailingAddress_<%= cid %>" class="control-label">Is your mailing address the same as your home address?</label>
+            		<select id="needsMailingAddress_<%= cid %>" class="form-control needsMailingAddress">
+               		 <option value="">Please select</option>
+               		 <% var q2Options = [["no", "Yes"], ["yes", "No"]]; %>
+               		 <%= writeOptions(q2Options, needsMailingAddress) %>
+            		</select>
+            		<div class="form-group-error has-error hide needsMailingAddressError">
+                		<small class="help-block">Make a selection.</small>
+            		</div>
+            	</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="conditional mailingAddressHolder <% if (!needsMailingAddress) { %>hide<% } %>"></div>
+</div>
+</fieldset>
+
+<!-- :BEGIN: Credentials -->
+<header class="form-header credentialsSection hide">
+    <h4 class="row"><span class="col-md-2">Credentials</span></h4>
+</header>
+<fieldset class="row credentialsSection hide">
+	<div class="col-md-10 col-md-offset-2">
+		<p>You can use your email address or create a different Username to set up your Online Banking access. Whichever you choose, that is what you&rsquo;ll use to Sign In to Online Banking.</p>
+		<!-- :BEGIN: FORM: Credentials -->
+		
+		<!-- Username (standard) -->
+		<div class="form-group-set row usernameGroup">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="form-group col-md-9">
+						<label for="username_<%= cid %>" class="control-label">Username</label>
+						<input type="text" id="username_<%= cid %>" name="username_<%= cid %>" class="form-control" autocomplete="off">
+						<!-- error -->
+						<div class="form-group-error has-error hide usernameError">
+							<small class="help-block">Enter your username.</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Password (standard, w pass strength) -->
+		<div class="form-group-set row passwordGroup">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="form-group col-md-9">
+						<p>Please choose a Password. You&rsquo;ll use this Password to Sign In to Online Banking.</p>
+						<label for="password_<%= cid %>" class="control-label">Password</label>
+		
+						<div class="input-group">
+							<input type="password" id="password_<%= cid %>" name="password_<%= cid %>" class="form-control passwordInput">
+							<span class="input-group-addon password-strength">
+                                Password strength<span class="passwordStrengthLabel"></span>
+								<span class="password-strength-result" id="password_strength_result_<%= cid %>">
+									<ul>
+										<li class="short">Too short</li>
+										<li class="weak">Weak</li>
+										<li class="good">Good</li>
+										<li class="strong">Strong</li>
+									</ul>
+								</span>
+							</span>
+						</div>
+		
+						<small class="help-block text-muted">A Password should be 8-16 characters with at least one upper case letter and one numeric character.</small>
+						<!-- error -->
+						<div class="form-group-error has-error hide passwordError">
+							<small class="help-block">Enter your password.</small>
+						</div>
+					</div>
+		
+				</div>
+			</div>
+		</div>
+		
+		<!-- ReType Password (inline, pass match) -->
+		<div class="form-group-set row reenterPasswordGroup">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="form-group col-md-9">
+						<label for="reenterPassword_<%= cid %>" class="control-label">Re-enter Password</label>
+						<div class="input-group">
+							<input type="password" id="reenterPassword_<%= cid %>" name="reenterPassword_<%= cid %>" class="form-control">
+							<span class="input-group-addon">
+								<span class="password-match"></span>
+							</span>
+						</div>
+						<!-- error -->
+						<div class="form-group-error has-error hide reenterPasswordError">
+							<small class="help-block">Re-enter your password.</small>
+						</div>
+					</div>
+		
+				</div>
+			</div>
+		</div>
+		
+		<!-- :END: FORM: Credentials -->
+	</div>
+</fieldset>
+
+<!-- :BEGIN: Security -->
+<header class="form-header">
+    <h4>Security Information</h4>
+</header>
+<fieldset class="row">
+    <div class="col-md-10 col-md-offset-2">
+        <!-- Secret Word (inline for lock icon) -->
+        <div class="form-group-set row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="form-group col-md-9 secretWordGroup">
+                        <label for="secretWord_<%= cid %>" class="control-label">Secret Word</label>
+                        <div class="input-group">
+                            <input type="text" id="secretWord_<%= cid %>" class="form-control" value="<%= secretWord %>">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock form-icon"></i></span>
+                        </div>
+                        <small class="help-block text-muted">We ask you to create a Secret Word to add an extra layer of security to your Online Banking experience. We may use your secret word to verify your identity if you contact us by phone and speak with a Customer Service Representative regarding your Account. Please write this down and keep it in a safe place.</small>
+                        <!-- error -->
+                        <div class="form-group-error has-error hide secretWordError">
+                            <small class="help-block">Enter your secret word.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secret Word Hint (standard, w/help-block) -->
+        <div class="form-group-set row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="form-group col-md-9 secretWordGroup">
+                        <label for="secretWordHint_<%= cid %>" class="control-label">Hint</label>
+                        <input type="text" id="secretWordHint_<%= cid %>" class="form-control" value="<%= secretWordHint %>">
+                        <small class="help-block text-muted">Choose a Secret Word Hint that will be easy to help you remember your Secret Word, but not for others to guess. It cannot be the same as your secret word. Examples: &ldquo;My dog&rsquo;s name&rdquo; or &ldquo;My favorite color&rdquo;</small>
+                        <div class="form-group-error has-error hide secretWordHintError">
+                            <small class="help-block">Enter hint for your secret word. It must be different than your secret word.</small>
+                        </div>
+                        <!-- error -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+</span>
+
+<div class="form-horizontal summarySection"></div>
+
+</div>
+</div>

@@ -1,0 +1,22 @@
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	</button>
+</div>
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+        <%
+        _.each(items, function(item) {
+            var cssClasses = "";
+            if (!item.isEnabled) cssClasses += " disabled";
+            if (item.isSelected) cssClasses += " active";
+            var itemId = "nav" + item.code.charAt(0).toUpperCase() + item.code.slice(1);
+        %>
+            <li class="navItem <%= cssClasses %>" id="<%= itemId %>"><a><span><span class="badge"><%= item.step %></span> <%= item.description %></span></a></li>
+        <% }); %>
+    </ul>
+</div>

@@ -1,0 +1,39 @@
+require.config({
+  "baseUrl": "js/app/",
+  "version": "0.2.11.fork",
+
+  paths: {
+    "underscore": "../vendor/js/libs/underscore",
+    "backbone": "../vendor/js/libs/backbone",
+    "backbone.layoutmanager": "../vendor/js/libs/backbone.layoutmanager",
+    "jquery": "../vendor/js/libs/jquery",
+    "bootstrap": "../vendor/js/libs/bootstrap.min"
+  },
+
+  shim: {
+    "underscore": {
+      "exports": "_"
+    },
+    "backbone": {
+      "deps": [
+        "jquery",
+        "underscore"
+      ],
+      "exports": "Backbone"
+    },
+    "backbone.layoutmanager": {
+      "deps": [
+        "jquery",
+        "backbone",
+        "underscore"
+      ],
+      "exports": "Backbone.Layout"
+    },
+    "bootstrap": {
+      "deps": ["jquery"],
+      "exports": "bootstrap"
+    }
+  },
+
+  name: "main"
+});

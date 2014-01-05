@@ -1,0 +1,319 @@
+<div id="funds-Searchl"
+<div class="page-header">
+    <div class="panel panel-default">
+        <header class="panel-csr">
+            <!-- <i class="glyphicon glyphicon-collapse-up"></i> -->
+            Customer Search Look Up
+            <!--<button type="button" class="editOwners btn btn-default btn-xs pull-right">WebCSR Look-UP</button>-->
+        </header>
+        <!-- Customer Search New 12022013-->
+        <fieldset>
+            <div class="form-group fund-csr h4">
+                <label>Select the type of search you would like to perform and enter the criteria in the search box.</label>
+            </div>
+            <div class="form-group col-md-10 col-md-offset-4">
+                <label class="radio"><input type="radio" name="searchType[]" value="customerName" checked><span class="slick"><span></span></span>Last Name Or Business Name (Enter at least 2 characters)</label>
+                <label class="radio"><input type="radio" name="searchType[]" value="taxId"><span class="slick"><span></span></span>Tax ID Number</label>
+                <label class="radio"><input type="radio" name="searchType[]" value="accountId"><span class="slick"><span></span></span>Account Number</label>
+                <label class="radio"><input type="radio" name="searchType[]" value="customerId"><span class="slick"><span></span></span>Customer Number</label>
+                <label class="radio"><input type="radio" name="searchType[]" value="userId"><span class="slick"><span></span></span>User ID</label>
+
+                <div class="form-group col-md-10 csr-pad2">
+                    <input type="text" class="input-block-level csr-fieldT" name="searchTerm" maxlength="40" size="38" value="" autocomplete="off" required="" placeholder="Search For:">
+                    <div class=''>
+                        <input id="dob" name="dob" type="text" maxlength="10" placeholder="XX-XX-XXXX" /><br /><br />
+                    <button type="submit" class="formButton btn-green csr-pad3" data-toggle="modal" data-target="#search-resultsModal" data-dismiss="modal">Submit</button>
+                    <button type="reset" class="formButton btn-green csr-pad3" >Clear</button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    </div>
+</div>
+<!-- Results Search-->
+<div id="search-resultsModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="search-resultsModal" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog search-size">
+        <div class="searchTable searchClose" >
+            <table >
+                <div class="modal-header searchClose">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <td colspan="40">
+                    <p>Select the Action button next to the applicable customer to verify their identity. After their identity is confirmed, you may then access the customer profile and account list.</p>
+                </td>
+                <tr>
+                    <td>
+                        Action
+                    </td>
+                    <td>
+                        Customer Name
+                    </td>
+                    <td >
+                        Tax ID Number
+                    </td>
+                    <td>
+                        Company Code
+                    </td>
+                    <td>
+                        User ID
+                    </td>
+                    <td>
+                        Customer Number
+                    </td>
+                    <td>
+                        Date of Birth
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        <input type="submit" value="" data-toggle="modal" data-target="#search-results-importModal"  data-dismiss="modal" onclick="this.form.submit();"> </input>
+                    </td>
+                    <td >
+                        Row 1
+                    </td>
+                    <td>
+                        Row 1
+                    </td>
+                    <td>
+                        Row 1
+                    </td>
+                    <td>
+                        Row 1
+                    </td>
+                    <td>
+                        Row 1
+                    </td>
+                    <td>
+                        Row 1
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        <input type="submit" value="" data-toggle="modal" data-target="#search-results-importModal" data-dismiss="modal" onclick="this.form.submit();"> </input>
+                    </td>
+                    <td >
+                        Row 2
+                    </td>
+                    <td>
+                        Row 2
+                    </td>
+                    <td>
+                        Row 2
+                    </td>
+                    <td >
+                        Row 2
+                    </td>
+                    <td >
+                        Row 2
+                    </td>
+                    <td >
+                        Row 2
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        <input type="submit" value="" data-toggle="modal" data-target="#search-results-importModal"  data-dismiss="modal" onclick="this.form.submit();"> </input>
+                    </td>
+                    <td >
+                        Row 3
+                    </td>
+                    <td>
+                        Row 3
+                    </td>
+                    <td>
+                        Row 3
+                    </td>
+                    <td>
+                        Row 3
+                    </td>
+                    <td>
+                        Row 3
+                    </td>
+                    <td>
+                        Row 3
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        <input type="submit" value="" data-toggle="modal" data-target="#search-results-importModal"  data-dismiss="modal" onclick="this.form.submit();"> </input>
+                    </td>
+                    <td >
+                        Row 4
+                    </td>
+                    <td>
+                        Row 4
+                    </td>
+                    <td>
+                        Row 4
+                    </td>
+                    <td>
+                        Row 4
+                    </td>
+                    <td>
+                        Row 4
+                    </td>
+                    <td>
+                        Row 4
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="12">
+
+                        <input type="submit" class="formButton btn-green searchNext_btn" name="next" onclick="this.form.method.value='next';" value="Next">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!--Import Search Results Modal-->
+<!-- Results Search-->
+<div id="search-results-importModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="identityAuthLabel" aria-hidden="false" style="display: ;">
+    <div class="modal-results">
+        <div class="searchTable searchClose" >
+            <table >
+                <div class="modal-header searchClose">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <td colspan="40">
+                    <p>To import the customer's data, first verify the customer based on this information.</p>
+                </td>
+                <tr>
+                    <td>
+                        Name
+                    </td>
+                    <td>
+                        Address
+                    </td>
+                    <td >
+                        Phone Number
+                    </td>
+                    <td>
+                        User ID
+                    </td>
+                    <td>
+                        Customer Number
+                    </td>
+                    <td>
+                        Tax ID Number
+                    </td>
+                    <td>
+                        Date of Birth
+                    </td>
+                    <td>
+                        Secret Word
+                    </td>
+                    <td>
+                        Customer Restrictions
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <span class="resultName"> Test 1 Test 2</span>
+                    </td>
+                    <td>
+                        <span class="resultAddress">500 W Monroe chicago, IL 60615</span>
+                    </td>
+                    <td>
+                        <span class="resultPhone">312-456-7898</span>
+                    </td>
+                    <td>
+                        <span class="resultUserid"> 1000001019</span>
+                    </td>
+                    <td>
+                        <span class="resultCustomernumber">5645654</span>
+                    </td>
+                    <td>
+                        <span class="resultCustomerTID">123-45-7897</span>
+                    </td>
+                    <td>
+                        <span class="resultDOB">05/07/1973</span>
+                    </td>
+                    <td>
+                        <span class="resultSecret">TEST&</span>
+                    </td>
+                    <td>
+                        <span class="resultRestrictions">None</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="12">
+                        <input type="submit" class="formButton btn-green" data-toggle="modal" data-target="#search-resultsModal"  value="Back" data-dismiss="modal">
+                        <input type="submit" class="formButton btn-green" data-toggle="modal" data-target="#CsrProgressLay"  value="Import" data-dismiss="modal">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="CsrProgressLay"> </div>
+</div>
+
+<div class="page-header">
+
+    <div class="alert alert-info fade in">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+
+        <p>Please have the following information on hand to set up your new Account(s):</p>
+        <ul>
+            <li>Social Security Number</li>
+            <li>Date of birth (Account Owners must be at least 18 years old.)</li>
+            <li>Email address</li>
+            <li>Valid US address</li>
+        </ul>
+        <p></p>
+    </div>
+
+    <!--<div class="page-info">
+        <p class="pull-right">All fields required except where stated as optional.</p>
+    </div>-->
+
+    <h1>Ownership Information</h1>
+</div>
+
+<div class="alert alert-danger fade in hide ownerErrorsAlert">
+    <p>Review and update the highlighted area(s) below.</p>
+</div>
+
+<!-- :BEGIN: Primary Owner -->
+<div class="section owners">
+    <header class="section-header">
+        <h2>Primary Account Owner</h2>
+    </header>
+	<div id="primaryOwnerEdit"></div>
+</div>
+<!-- :END: Primary Owner -->
+
+<!-- :BEGIN: Joint Owners -->
+<div class="section owners jointOwnersHolder">
+    <header class="section-header">
+        <h2>Joint Owner(s)</h2>
+        <p>You may add up to three Joint Owners. By adding a Joint Owner, you confirm that you are authorized by the Joint Applicant to apply for a Joint Account in all names.</p>
+    </header>
+
+    <div class="jointOwnerList"></div>
+
+    <div class="actions actions-add addOwnerDiv">
+        <button type="button" class="btn btn-link" id="addOwnerButton">+ Add Joint Owner</button>
+    </div>
+</div>
+
+<div class="section beneficiaries">
+    <header class="section-header">
+        <h2>Beneficiaries</h2>
+    </header>
+    <p></p>
+</div>
+
+<div class="actions actions-page clearfix">
+    <div class="pull-left">
+        <button class="btn btn-primary navigateAccounts">Back</button>
+    </div>
+    <div class="pull-right">
+        <!--<a href="javascript:void(0);" class="btn btn-link">Save my application for later</a>-->
+        <button class="btn btn-primary btn-lg navigateReview">Continue</button>
+    </div>
+</div>

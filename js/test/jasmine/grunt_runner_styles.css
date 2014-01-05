@@ -1,0 +1,7 @@
+/*
+ * under the current build process, the tests don't have css definitions when run via phantomjs w/in grunt;
+ * since some tests depend on making elements invisible via the 'hide' class, we include it manually here
+ */
+.hide {
+    display: none;
+}

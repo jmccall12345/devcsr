@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>W9 Tax Certification</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- styles -->
+    <link rel="stylesheet/less" type="text/css" href="assets/less/style.less">
+    <script type="text/javascript">
+        less = {
+            env: "development", // or "production"
+            async: false,       // load imports async
+            fileAsync: false,   // load imports async when in a page under
+            // a file protocol
+            poll: 1000,         // when in watch mode, time in ms between polls
+            functions: {},      // user functions, keyed by name
+            dumpLineNumbers: "comments", // or "mediaQuery" or "all"
+            relativeUrls: false // whether to adjust url's to be relative
+            // if false, url's are already relative to the
+            // entry less file
+        };
+    </script>
+    <script src="js/vendor/js/libs/less.js"></script>
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	<header class="container main pop hidden-print">
+		<aside class="text-right">
+			<p><a href="javascript:window.opener='x';window.close();" class="btn btn-default btn-xs">&times; Close</a></p>
+		</aside>
+	</header>
+	<div class="container main pop">
+		<header class="clearfix">
+			<h2 class="pull-left">W9 Tax Certification</h2>
+			<p class="pull-right print-hidden"><a href="pdfs/IRS_Form_W-9_with_Instructions.pdf" target="_blank" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-file"></i> Download PDF</a></p>
+		</header>
+		<iframe src="pdfs/IRS_Form_W-9_with_Instructions.pdf#zoom=100" height="100%" width="100%"></iframe>
+	</div> <!-- /container -->
+	
+<div id="scripts">
+    <script src="js/vendor/js/libs/jquery.js"></script>
+    <script src="js/vendor/js/libs/bootstrap.min.js"></script>
+</div>
+
+</body>
+</html>

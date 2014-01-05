@@ -1,0 +1,50 @@
+<div class="select-verify tabs">
+    <fieldset class="row">
+        <div class="col-md-4">
+            <div class="radio">
+                <label for="verifyInstant_<%= cid %>">
+                    <input id="verifyInstant_<%= cid %>" data-tab="verifyInstant-tab_<%= cid %>" name="verifyMethod" class="verifyMethodType" type="radio">
+                        <span class="slick">
+                            <span></span>
+                            Instant Verification
+                        </span>
+                </label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="radio">
+                <label for="verifyDeposits_<%= cid %>">
+                    <input id="verifyDeposits_<%= cid %>" data-tab="verifyDeposits-tab_<%= cid %>" name="verifyMethod" class="verifyMethodType" type="radio">
+                        <span class="slick">
+                            <span></span>
+                            Trial Deposits
+                        </span>
+                </label>
+            </div>
+        </div>
+    </fieldset>
+</div>
+<div class="tab-content">
+    <div class="tab-pane verifyMethodPane iavPane" id="verifyInstant-tab_<%= cid %>">
+        <h4>Instant Verification</h4>
+        <p>Sign In at your financial institutions website.</p>
+        <p>This is the quickest and easiest way to fund your account. Sign In at your financial institutions website. Our connections are secure and we will not save any of this information.</p>
+        <div class="action">
+            <button type="button" class="btn btn-primary launchIAV" data-toggle="modal" data-target="#verifyAccount_<%= cid %>">Go to Login</button>
+        </div>
+    </div>
+    <div class="tab-pane verifyMethodPane trialDepositPane" id="verifyDeposits-tab_<%= cid %>">
+        <h4>Trial Deposits</h4>
+        <p>Before we are able to transfer funds from your external account, we&rsquo;ll need to make some trial deposits to that account to verify you are the Account Owner.</p>
+        <p>Here&rsquo;s how it works:</p>
+        <ul>
+            <li>We&rsquo;ll make two small trial deposits into your external bank account (such as $0.01 and $0.06).</li>
+            <li>Check your external account to verify the deposits are there. You&rsquo;ll see them as credits.</li>
+            <li>Sign In .</li>
+            <li>Return to the External Accounts page within 14 days and enter the trial deposit amounts to enable secure transfers between your and your external bank account.</li>
+        </ul>
+        <div class="action">
+            <button type="button" class="btn btn-primary verifyViaDeposits">Confirm</button>
+        </div>
+    </div>
+</div>

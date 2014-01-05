@@ -1,0 +1,175 @@
+<header class="panel-heading fund-account-header">
+    <div class="row">
+        <span class="col-md-6">
+            <h4><%= productName %> Account</h4>
+            <p class="hide">Account Number: 123456789</p>
+        </span>
+        <span class="col-md-3 text-right">
+            <h5>Annual Rate (APR)</h5>
+            <p><%= accountAPR.toFixed(2) %>%</p>
+        </span>
+        <span class="col-md-3 text-right">
+            <h5>Opening Deposit Amount</h5>
+            <p><%= formattedActualFundingAmount %></p>
+        </span>
+    </div>
+</header>
+
+<div id="fund_<%= cid %>" style="height: auto;">
+<div class="panel-body">
+<!-- :BEGIN: Tab Selectors -->
+<div class="select-funding tabs">
+    <p>Please select your preferred funding method.</p>
+    <fieldset class="row">
+        <div class="col-md-4">
+            <div class="radio">
+                <label for="fundTransfer_<%= cid %>">
+                    <input id="fundTransfer_<%= cid %>" data-tab="fundTransfer-tab_<%= cid %>" name="fundMethod_<%= cid %>" type="radio" class="fundMethodType" checked="checked">
+                    <span class="slick">
+                        <span></span>
+                        Fund Now
+                    </span>
+                </label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="radio">
+                <label for="wireTransfer_<%= cid %>">
+                    <input id="wireTransfer_<%= cid %>" data-tab="wireTransfer-tab_<%= cid %>" name="fundMethod_<%= cid %>" type="radio" class="fundMethodType">
+                    <span class="slick">
+                        <span></span>
+                        Fund by ACH &amp; Wire Transfer
+                    </span>
+                </label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="radio">
+                <label for="mailCheck_<%= cid %>">
+                    <input id="mailCheck_<%= cid %>" data-tab="mailCheck-tab_<%= cid %>" name="fundMethod_<%= cid %>" type="radio" class="fundMethodType">
+                        <span class="slick">
+                            <span></span>
+                            Fund by Check
+                        </span>
+                </label>
+            </div>
+        </div>
+    </fieldset>
+</div>
+<!-- :BEGIN: Tab Contents -->
+<div class="tab-content">
+
+<!-- :BEGIN: Funds Transfer - Tabs Pane #1 -->
+<div class="tab-pane fundingPane fromAccountSection active" id="fundTransfer-tab_<%= cid %>">
+</div>
+
+<!-- :BEGIN: Wire Transfer - Tabs Pane #2 -->
+<div class="tab-pane fundingPane" id="wireTransfer-tab_<%= cid %>">
+    <header>
+        <p>You can also use wire transfer to fund your new Savings Account. Please note that  processes wire transfers in US Dollars only</p>
+        <p>To wire money into your  Account  from a U.S. bank, you&rsquo;ll need to give the other bank this information:</p>
+        <ul>
+
+        </ul>
+    </header>
+</div>
+
+<!-- :BEGIN: Mail a Check - Tabs Pane #3 -->
+<div class="tab-pane fundingPane" id="mailCheck-tab_<%= cid %>">
+    <header>
+        <p>Please mail a check via US Mail (no cash, please!) that displays your account number, made payable to yourself or  to the following address:</p>
+        <address><br>
+
+        </address>
+        <p>.</p>
+    </header>
+</div>
+
+<!-- :BEGIN: For all funding types -->
+<fieldset class="row">
+    <div class="col-md-8">
+        <!-- Deposit Amount (inline for controls) -->
+        <div class="form-group-set row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="form-group col-md-8 depositAmountGroup">
+                        <label class="control-label">Deposit Amount</label>
+                        <div class="input-group input-group-amount showState">
+                            <span class="input-group-addon">$</span>
+                            <input type="text" class="form-control fundingAmountInput" value="<%= formattedFundingAmount %>" disabled="">
+                            <span class="input-group-btn">
+                                <button class="btn btn-link changeDepositAmount" type="button">Change Amount</button>
+                                <button class="btn btn-primary confirmDepositAmount hide" type="button">Confirm</button>
+                            </span>
+                        </div>
+                        <div class="form-group-error has-error hide depositAmountError">
+                            <small class="help-block lowDepositAlert"><span class="text-success">Your Deposit Amount is less than your initial pledged amount $<%= formattedFundingAmount %>.</span></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Confirm this info (standard checkbox) -->
+        <div class="form-group confirmTransactionGroup">
+            <div class="checkbox">
+                <label class="control-label">
+                    <input type="checkbox" class="form-control confirmTransaction" id="confirmInfo_<%= cid %>" name="confirmInfo_<%= cid %>">
+                    <span class="slick"><span></span>By clicking this checkbox, I authorize this transaction.</span>
+                </label>
+            </div>
+            <div class="form-group-error has-error hide confirmTransactionError">
+                <small class="help-block"></small>
+            </div>
+        </div>
+    </div>
+</fieldset>
+<!-- :END: For all funding types-->
+
+<!-- :BEGIN: Verify -->
+<div class="verifyApproachSection hide"></div>
+<!-- :END: Verify -->
+
+</div>
+<!-- :END: Tabs Content -->
+
+</div>
+</div>
+
+<div id="verifyAccountMicroConfirm_<%= cid %>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="verifyAccountMicroConfirmLabel_<%= cid %>" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="verifyAccountMicroConfirmLabel_<%= cid %>">External Bank Account Verification</h3>
+                <p>We will verify your [Bank Name] account using trial deposits (this can take 2-3 business days). Please Select Continue to confirm.</p>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <div class="actions">
+                    <a class="btn btn-link" data-dismiss="modal" aria-hidden="true">Cancel</a>
+                    <button class="btn btn-primary microConfirmButton">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="verifyAccountFailed_<%= cid %>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="verifyAccountFailedLabel_<%= cid %>" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="verifyAccountFailedLabel_<%= cid %>">External Bank Account Verification Failed</h3>
+                <p>We could not confirm your bank account. Please review your information.</p>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <div class="actions">
+                    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

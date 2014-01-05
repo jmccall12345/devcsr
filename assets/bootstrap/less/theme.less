@@ -1,0 +1,851 @@
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+
+//
+// Header
+// --------------------------------------------------
+
+header.main {
+	h1.logo{
+		background: url(../img/logo-gecapitalbank.png) 20px 0 no-repeat;
+		background-size: 235px 54px;
+		height: 54px;
+		margin: 20px 0;
+		text-indent: -9999em;
+		min-width: 365px;
+		@media (max-width: @screen-sm) {
+			margin: 10px 0;
+		}	
+	}
+	aside {
+		margin: 30px 0 0;
+		p:last-of-type {
+			margin-bottom: 0;
+		}
+		.btn {
+			margin-left: 10px;
+		}
+		@media (max-width: @screen-lg) {
+			margin-bottom:20px;
+		}
+		@media (max-width: @screen-sm) {
+			margin-top:0;
+			text-align: left;
+		}	
+	}
+	&.pop {
+		margin: 20px 0 0 0;
+		aside {
+			margin-bottom: 0;
+			@media (max-width: @screen-sm) {
+				text-align: right;
+			}
+		}
+		
+	}
+}
+
+
+
+.page-info {
+	.clearfix();
+	.text-right{
+	@media (max-width: @screen-sm) {
+		text-align:left;
+	}
+	}
+}
+.owner .page-info {
+	margin: 20px 0 0;
+	p {
+		margin: 0;
+	}
+}
+
+
+
+//
+// POP
+// --------------------------------------------------
+
+div.main.pop {
+	height: 540px;
+	header {
+		margin: 10px 0 0;
+	}
+	h2 {
+		font-size: 26px;
+		margin: 0;
+	}
+	iframe {
+		border: 0;
+	}
+}
+
+
+//
+// Footer
+// --------------------------------------------------
+
+footer.main {
+	background: #666;
+	color: #fff;
+	
+	.panel-default {
+		background-color: transparent;
+		border: none;
+		box-shadow:none;
+		.panel-heading {
+			border-bottom: 1px dotted #878787;
+			@media (max-width: @screen-sm) {
+				.pull-left {
+					float: none;
+					margin-bottom: 15px;
+				}
+				.pull-right {
+					float: none;
+					&.text-right {
+						text-align: left;
+					}
+				}
+			}
+		}
+		.panel-heading, .panel-body {
+			background-color: transparent;
+			padding: 25px 15px;
+		}
+		.text-muted {
+			color: #fff;
+		}
+		a {
+			color: #fff;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+
+
+
+//
+// Tables
+// --------------------------------------------------
+.rate-table.table-bordered, .rate-table.table-bordered > thead > tr > th:first-of-type,
+.rate-table.table-bordered > tbody > tr > th:first-of-type, .rate-table.table-bordered > tbody > tr > td:first-of-type {
+	border-left-width: 0; 
+}
+.rate-table.table-bordered, .rate-table.table-bordered > thead > tr > th:last-of-type,
+.rate-table.table-bordered > tbody > tr > td:last-of-type {
+	border-right-width: 0; 
+}
+
+
+//
+// Forms
+// --------------------------------------------------
+
+// Slick Check/Radio
+input[type="checkbox"], input[type="radio"] {
+	display: none;
+}
+input[type="checkbox"] + .slick span, input[type="radio"] + .slick span {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin: -4px 10px 0 -25px;
+	vertical-align: middle;
+	background: url(../img/check_radio_sheet.png) left top no-repeat;
+	cursor: pointer;
+}
+input[type="checkbox"]:checked + .slick span {
+	background-position: -16px 0;
+}
+input[type="radio"] + .slick span {
+	background-position: -32px 0;
+}
+input[type="radio"]:checked + .slick span {
+	background-position: -48px 0;
+}
+
+//
+// Buttons
+// --------------------------------------------------
+
+.actions-signin {
+	.btn-primary {
+		margin-left: 10px;
+	}
+	@media (max-width: @screen-tablet) {
+		margin-bottom: 15px;
+	}
+}
+.actions-page {
+	margin-bottom: 28px;
+	.pull-right .btn {
+		margin-left: 20px;
+	}
+}
+.input-group-btn {
+	&.launchTrialDepositInfoEl {
+		@media (max-width: @screen-xs-max) {
+			display:block;
+		}
+	}
+}
+
+//
+// Misc
+// --------------------------------------------------
+ul, ol {
+	padding-left: 1.2em;
+}
+LI.list1 {list-style: circle outside; color:green;}
+.bullet{
+  color: @brand-primary;
+}
+.text-muted-more {
+	color: @gray-light;
+}
+
+.applybullet-group {
+    padding: 25px 0 40px;
+    @media (max-width: @screen-md) {
+    	padding:0;
+    }
+    .container {
+    	 @media (max-width: @screen-md) {
+    	 	padding:0;
+    	 }
+    } 
+}
+.applybullet {
+    border-left: 1px solid @gray-light;
+    line-height: 1.25;
+    padding: 0 0 0 20px;
+    text-align: center;
+    
+    @media (max-width: @screen-md) {
+    	border:none;
+    	padding-left: 0;
+    	text-align: left;
+    	margin-bottom: 10px;
+    	.clearfix();
+    }
+}
+.applybullet-group .col-md-3:first-of-type .applybullet {
+	border: none;
+}
+.applybullet .media-object {
+	@media (max-width: @screen-md) {
+		float:left;
+		width: 43px;
+	}
+}
+.applybullet .media-body {
+    margin: 10px 0 0;
+    @media (max-width: @screen-md) {
+    	float:left;
+    	margin-top: 10px;
+    	margin-left: 10px;
+    }
+}
+.applybullet p {
+    margin: 0;
+}
+
+.loginSection .bank-logo {
+	margin-top: 10px;
+}
+
+
+//
+// Password Strength
+// --------------------------------------------------
+
+.input-group-addon {
+
+	&.password-strength {
+		color: #666;
+		font-size: 0.92857142857143em;
+		padding: 0 0 0 10px;
+		text-align: left;
+		
+		strong {
+			color: #000;
+		}
+	}
+}
+
+.password-strength-result {
+	ul {
+		list-style: none;
+		margin: 5px 0 0 0;
+		padding: 0;
+		> li {
+			background-color: #e2e2e2;
+			display: inline-block;
+			height: 8px;
+			text-indent: -9999em;
+			width: 50px;
+		}
+		&.short {
+			> li.short { background-color: @brand-primary; }
+		}
+		&.weak {
+			> li.short, > li.weak { background-color: @brand-primary; }
+		}
+		&.good {
+			> li.short, > li.weak, > li.good { background-color: @brand-primary; }
+		}
+		&.strong {
+			> li.short, > li.weak, > li.good, > li.strong { background-color: @brand-primary; }
+		}
+	}
+}
+
+
+//
+// Safe Key Carousel
+// --------------------------------------------------
+#safeKeyCarousel {
+
+	.item {
+		margin: 0 5px;
+
+		span {
+			display: block;
+			border: 8px solid #fff;
+			&.selected {
+				border-color: @brand-primary;
+				img {
+					box-shadow: 0 0 0 2px rgba(255,255,255,1);
+				}
+			}
+			img {
+				width: 100%;
+			}
+		}
+		
+	}
+}
+
+
+//
+// Navbar
+// --------------------------------------------------
+
+// Basic navbar
+.navbar {
+	
+	.navbar-nav > li > a {
+		&,
+		&:hover {
+			background-color: @gray-lighter;
+			color: @gray;
+			@media (max-width: @screen-sm) {
+				background:#fff;
+			}
+		}
+		.badge { 
+			background-color:transparent; 
+			color: @gray; 
+			padding:2px 3px 1px 3px; 
+			text-align:center; 
+			 
+			font-size: 13px;
+			@media (min-width: @screen-lg) {
+				border:1px solid @gray-light; 
+				border-radius: 50%; 
+				font-size: 15px;
+				padding:3px 6px 3px 7px;
+				margin:0 3px 0 0;
+			}
+		}
+	}
+  .navbar-nav > .active > a, {
+    background-color: @brand-primary;
+    	@media (max-width: @screen-sm) {
+    		color: @brand-primary;
+    		background-color: #fff;
+    	}
+    .badge { background-color:transparent; color: #fff; border-color:#fff; }
+  }
+  .navbar-nav > .disabled > a {
+  	color: #000;
+    background-color: #fff;
+    &:hover {
+    	color: #000;
+    }
+    .badge { color: #000; }
+  }
+}
+.navbar-nav {
+	float: none;
+	@media (max-width: @screen-sm) {
+		margin-top:0;
+	}
+	> li {
+		border: 1px solid @gray-light;
+		border-right: none;
+		
+		@media (min-width: @screen-sm) {
+			width: 20%;
+		}
+		@media (max-width: @screen-sm) {
+			border:none;
+			border-bottom: 1px solid @gray-lighter;
+		}
+		&:last-of-type {
+			border-right: 1px solid @gray-light;
+		}
+	}
+	
+}
+
+.navbar-brand,
+.navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a {
+	color: @gray;
+	font-size: 13px;
+  	text-shadow: none;
+  	@media (min-width: @screen-lg) {
+  		font-size: 15px;
+  		padding: 10px 5px 10px 15px;
+  	}
+  	@media (max-width: @screen-sm) {
+  		color: @gray;
+  	}
+}
+
+.navbar-collapse {
+	padding-left: 0;
+	padding-right: 0;
+}
+.nav-tabs {
+	border-bottom: 1px solid @gray-light;
+	border-left: 1px solid @gray-light;
+}
+.nav-tabs > li > a, .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+	border: 1px solid @gray-light;
+	border-width: 1px 1px 0 0;
+	border-radius: 0;
+	font-family: @ge-font-family-bold;
+	margin: 0;
+}
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+	background-color: @gray-lighter;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+	background-color: @brand-primary;
+	border-left: none;
+	border-bottom: 1px solid @gray-light;
+	color: #fff;
+}
+
+//
+// Alerts
+// --------------------------------------------------
+
+// Common styles
+.alert {
+  text-shadow: 0 1px 0 rgba(255,255,255,.2);
+  @shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 1px 2px rgba(0,0,0,.05);
+  .box-shadow(@shadow);
+  border: none;
+  border-radius:0;
+  box-shadow:none;
+}
+
+// Mixin for generating new styles
+.alert-styles(@color) {
+  
+}
+
+// Apply the mixin to the alerts
+.alert-success    { .alert-styles(@alert-success-bg); }
+.alert-info       { .alert-styles(@alert-info-bg); }
+.alert-warning    { .alert-styles(@alert-warning-bg); }
+.alert-danger     { .alert-styles(@alert-danger-bg); }
+
+
+//
+// Sections
+// --------------------------------------------------
+.section {
+	margin-bottom: 50px;
+	&.beneficiaries {
+		margin-bottom: 100px;
+	}
+	.account-setting {
+		border-bottom: 1px solid @gray-light;
+		margin-top: 25px;
+		padding-bottom: 25px;
+		
+	}
+	
+	.section-header {
+		margin-top: @line-height-computed;
+		margin-bottom: (@line-height-computed / 2);
+		.clearfix();
+		h2 {
+			margin-top: 0;
+			@media (max-width: @screen-tablet) {
+				font-size: 22px;
+			}
+		}
+	}
+}
+#accountList > div:last-of-type .section.account {
+	margin-bottom: 25px;
+}
+#accountList > div:last-of-type .account-setting {
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+
+
+//
+// Panels
+// --------------------------------------------------
+
+// Common styles
+.panel {
+  
+}
+.main > .panel {
+	border: none;
+	box-shadow: none;
+	padding: 0;
+}
+.main > .panel > .panel-body {
+	padding: 0;
+}
+
+// Mixin for generating new styles
+.panel-heading-styles(@color) {
+  #gradient > .vertical(@start-color: @color; @end-color: darken(@color, 5%));
+}
+
+// Apply the mixin to the panel headings only
+.panel-default > .panel-heading   { 
+	background:@brand-primary;
+	color:#fff; 
+	font-size: 18px;
+	font-family: @ge-font-family-bold;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+	.btn-default.collapsing-header {
+		background: none;
+		border: none;
+		color:#fff;
+		box-shadow: none;
+		padding: 0;
+		position: relative;
+		top: -2px;
+	}
+//	.btn-default.collapsing-header:before {
+//		content: '-';
+//	}
+//	.btn-default.collapsing-header.collapsed:before {
+//		content: '+';
+//	}
+}
+.panel-primary > .panel-heading   { .panel-heading-styles(@panel-primary-heading-bg); }
+.panel-success > .panel-heading   { .panel-heading-styles(@panel-success-heading-bg); }
+.panel-info > .panel-heading      { .panel-heading-styles(@panel-info-heading-bg); }
+.panel-warning > .panel-heading   { .panel-heading-styles(@panel-warning-heading-bg); }
+.panel-danger > .panel-heading    { .panel-heading-styles(@panel-danger-heading-bg); }
+
+
+//
+// Icons
+// --------------------------------------------------
+
+.glyphicon-lock {
+	color: @brand-primary;
+	font-size: 26px;
+	margin-left: 5px;
+    padding-right: 5px;
+	top:5px;
+}
+.input-group-addon {
+	.glyphicon-lock {
+		color: @brand-primary;
+		font-size: 22px;
+		top:1px;
+	}
+}
+footer.main {
+	.glyphicon-lock {
+		color:#fff;
+	}
+}
+
+.glyphicon-collapse-up {
+	font-family: @ge-font-family-bold;
+	font-size: 30px;
+	top: 0;
+	margin-right: 0;
+	text-align: center;
+	width: 25px;
+}
+.glyphicon-collapse-up:before {
+	content: '–';
+}
+.btn-default.collapsing-header.collapsed {
+	.glyphicon-collapse-up:before {
+		content: '+';
+	}
+}
+
+
+//
+// Wells
+// --------------------------------------------------
+
+.well {
+  #gradient > .vertical(@start-color: darken(@well-bg, 5%); @end-color: @well-bg;);
+  border-color: darken(@well-bg, 10%);
+  @shadow: inset 0 1px 3px rgba(0,0,0,.05), 0 1px 0 rgba(255,255,255,.1);
+  .box-shadow(@shadow);
+}
+
+//
+// Processing Modal
+// --------------------------------------------------
+
+.processing {
+	overflow: hidden;
+}
+.modal {
+	&#processingDialog {
+		.modal-dialog{
+			.modal-body {
+				overflow: hidden;
+			}
+			text-align: center;
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			width: 300px;
+			height: 150px;
+			margin-left: -150px;
+			margin-top: -150px;
+			h3 {
+				margin-top: 0;
+			}
+		}	
+	}
+}
+
+//
+// Font Resizer
+// --------------------------------------------------
+
+.page-info {
+	.btn-toolbar {
+		margin-bottom: 15px;
+		text-align: right;
+	}
+}
+.btn-group-fonts {
+display: inline-block;
+margin-left: 10px;
+position: relative;
+
+}
+#fontModal {
+	position: absolute;
+	right: 0;
+	top: 0;
+	left: auto;
+	overflow: visible;
+	outline: none;
+	.modal-dialog {
+		padding: 0;
+		width: 180px;
+	}
+	.modal-content {
+		border-color: #ddd;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+	}
+	.modal-header {
+		border: 0 none;
+		padding: 0 5px;
+		
+		.close {
+			color: #439ed2;
+			font-family: "GEInspiraMedium",sans-serif;
+			margin: 0;
+			opacity: 1;
+			outline: none;
+		}
+	}
+	
+	.modal-body {
+		color: #666;
+		font-family: "GEInspiraMedium",sans-serif;
+		font-size: 16px;
+		padding: 0 20px 20px 20px;
+		text-align: left;
+		
+		ul {
+			margin: 0;
+			list-style: none;
+			padding: 0;
+			
+			li {
+				margin: 10px 0;
+				&.large {
+					margin-bottom: 0;
+				}
+			}
+			
+		}
+		
+		.textsize-sm {
+			font-size: 12px;
+		}
+		.textsize-md {
+			font-size: 14px;
+		}
+		.textsize-lg {
+			font-size: 16px;
+		}
+	}
+}
+
+
+
+//.small #fontModal .modal-body .textsize-sm,
+//.medium #fontModal .modal-body .textsize-md,
+//.large #fontModal .modal-body .textsize-lg {
+//	color: #666;
+//}
+.btn-group-fonts > .btn {
+	padding-top: 0;
+	padding-bottom: 0px;
+}
+.btn-group-fonts .sm {
+	font-family: helvetica, arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 16px;
+}
+.btn-group-fonts .lg {
+	font-family: helvetica, arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 21px;
+}
+
+
+//
+// Funding
+// --------------------------------------------------
+
+.fund-account {
+	.fund-account-header {
+		font-size: @font-size-small;
+		h4, h5, p {
+			margin: 0;
+		}
+		h5 {
+			margin: 3px 0;
+		}
+		
+	}
+	.tabs {
+		padding: 20px;
+		& .radio {
+			margin: 0;
+			padding: 0;
+			& label {
+				border: 1px solid @brand-primary;
+				border-radius: @border-radius-large;
+				color: @brand-primary;
+				display: block;
+				padding: 15px 15px 15px 40px;
+			}
+		}
+	}
+}
+.tab-content {
+	& & {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	& .tabs {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+
+//
+// Hero Rates
+// --------------------------------------------------
+.featuresList{
+
+}
+
+.account-promo{
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #f2f2f2;
+}
+
+.rate-box h3 {
+	margin-top:0; 
+}
+.rate {
+	font-size: 82px;
+	line-height: 1;
+	margin: 0 0 8px 0;
+}
+.rate span.number {
+	display: block;
+	float: left;
+	font-size: 1em;
+	font-family: @ge-font-family-bold;
+	margin: 0 3% 0 0;
+	height: .96em;
+}
+.rate span.pc {
+	display: block;
+    font-size: 15px;
+    //font-size: .22em;
+	padding: .75em 0 .2em 0;
+}
+.rate span.apy {
+	display: block;
+    font-size: 12px;
+  //font-size: .14em;
+}
+.rate p {
+	clear: both;
+	font-size: 15px;
+	margin: 15px 0 0 5px;
+	padding-right: 20px;
+	text-align: left;
+}
+.rate p:last-of-type {
+	margin-top: 5px;
+}

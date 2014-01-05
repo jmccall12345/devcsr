@@ -1,0 +1,22 @@
+<table class="rate-table table table-bordered">
+	<thead>
+		<tr>
+			<th>Account Name</th>
+			<th>Annual Percentage Yield (APY)</th>
+			<th>Interest Rate</th>
+			<th>Opening Deposit Amount</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%
+		_.each(items, function(item) {
+		%>
+		<tr>
+			<th><%= item.productName %></th>
+			<td><%= item.accountAPY.toFixed(2) %>%</td>
+			<td><%= item.accountAPR.toFixed(2) %>%</td>
+			<td>$<%= item.formattedFundingAmount %></td>
+		</tr>
+		<% }); %>
+	</tbody>
+</table>

@@ -1,0 +1,95 @@
+<!-- :BEGIN: Page Header -->
+<div class="page-header">
+    <h1>Review and Sign</h1>
+
+</div>
+<!-- :END: Page Header -->
+<div class="alert alert-danger fade in hide signErrors">
+    <p>Accept all Account Disclosures and Agreements.</p>
+</div>
+<!-- :BEGIN: Account Summary -->
+<div class="panel panel-default accounts review">
+	<header class="panel-heading">
+		Savings Account(s)
+	</header>
+   <div class="accountList"></div>
+</div>
+<!-- :END: Account Summary -->
+
+<!-- :BEGIN: Account Agreements -->
+<div class="section review">
+	<div class="panel panel-default agrees last">
+		<header class="panel-heading">
+			Account Disclosures and Agreements
+		</header>
+		<div class="panel-body">
+			<!-- :BEGIN: Primary Owner Agreement Form -->
+			<fieldset class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h3><span class="primaryOwnerName"></span> <small>(Primary Account Owner)</small></h3>
+					<h4>Agreement Disclosures Acceptance</h4>
+					<div class="form-group-set">
+						<div class="checkbox">
+							<label>
+								<input class="mustCheck" type="checkbox" id="agreePP" name="agreePP">  <span class="slick"><span></span>I have read and agree to the <a href="javascript:void(0)" onclick="window.open('privacy.html','Privacy Policies','location=0,status=0,scrollbars=1,resizable=no,width=650,height=650,menubar=no,toolbar=no')">Privacy Policies</a>.</span>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input class="mustCheck" type="checkbox" id="agreeTAC" name="agreeTAC">  <span class="slick"><span></span>I have read and agree to the <a href="javascript:void(0)" onclick="window.open('terms.html','Terms and Conditions','location=0,status=0,scrollbars=1,resizable=no,width=650,height=650,menubar=no,toolbar=no')">Terms &amp; Conditions</a>.</span>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input class="mustCheck" type="checkbox" id="agreeESign" name="agreeESign">  <span class="slick"><span></span>I have read and agree to the <a href="javascript:void(0)" onclick="window.open('esign-agree.html','eSign Agreement','location=0,status=0,scrollbars=1,resizable=no,width=650,height=650,menubar=no,toolbar=no')">eSign Agreement</a>.</span>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input class="mustCheck" type="checkbox" id="agreeW9" name="agreeW9">
+								<span class="slick"><span></span></span>TAX CERTIFICATION (Please read this entire section)
+
+									<p>Under penalties of perjury, I certify that: (i) The number provided in this application is my correct taxpayer identification number; and (ii) I am not subject to backup withholding because: (a) I am exempt from backup withholding, or (b) I have not been notified by the Internal Revenue Service (IRS) that I am subject to backup withholding as a result of a failure to report all interest or dividends, or (c) the IRS has notified me that I am no longer subject to backup withholding; and (iii) I am a U.S. citizen or other U.S. person (defined in the instructions <a href="javascript:void(0)" onclick="window.open('w9cert.html','W-9 Tax Certification','location=0,status=0,scrollbars=1,resizable=no,width=650,height=650,menubar=no,toolbar=no')">Form W-9 with instructions</a>).</p>
+									<p>
+									CAUTION: If the IRS has notified you that you are currently subject to backup withholding because you have failed to report all interest and dividends on your tax return you cannot proceed further with the online application and cannot check the box above. Please contact Customer Service to continue your application.
+									</p>
+									<p>
+									The Internal Revenue Service does not require your consent to any provision of this document other than the certifications required to avoid backup withholding.
+									</p>
+									<p>
+									By checking the box alongside &ldquo;TAX CERTIFICATION&rdquo; above, I agree and certify under penalties of perjury that the taxpayer identification number and tax certifications above are correct.
+									</p>
+									<p>
+									Social Security Number
+									<br>
+									<span class="primaryOwnerSSN"></span>
+									</p>
+							</label>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h4>Electronic Disclosures Acceptance</h4>
+					<div class="checkbox">
+		 				<label>
+		     				<input class="mustCheck" type="checkbox" id="agreeEDA" name="agreeEDA"> <span class="slick"><span></span>I confirm that the internet access device(s) I will use to receive the related legal disclosures, agreements, account signature card and the instructions meet(s) the system requirements described in the <a href="javascript:void(0)" onclick="window.open('terms.html','Terms and Conditions','location=0,status=0,scrollbars=1,resizable=no,width=500,height=500,menubar=no,toolbar=no')">Terms &amp; Conditions</a>; and I consent to receiving the related legal disclosures, agreements, signature card and the instructions electronically.</span>
+						</label>
+					</div>
+				</div>
+			</fieldset>
+			<!-- :END: Primary Owner Agreement Form -->
+		</div>
+	</div>
+</div>
+<!-- :END: Account Agreements -->
+
+<div class="actions actions-page clearfix">
+    <div class="pull-left">
+        <button type="button" class="btn btn-primary navigateReview">Back</button>
+    </div>
+    <div class="pull-right">
+        <a class="btn btn-primary btn-lg identityModal">Submit</a>
+    </div>
+</div>

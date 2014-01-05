@@ -1,0 +1,41 @@
+<header class="panel-heading account-header">
+    <%= productName %>
+</header>
+<div class="panel-body form-horizontal">
+    <div class="form-group">
+        <label class="col-md-5 control-label">Account Number</label>
+        <div class="col-md-7">
+            <p class="form-control-static">NOT SET<% /*= accountNumber */%></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-5 control-label">Account Type</label>
+        <div class="col-md-7">
+            <p class="form-control-static"><%= productName %></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-5 control-label">Amount</label>
+        <div class="col-md-7">
+            <p class="form-control-static">$<%= formattedActualFundingAmount %></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-5 control-label">Annual Percentege Yield (APY)</label>
+        <div class="col-md-7">
+            <p class="form-control-static"><%= accountAPY.toFixed(2) %>%</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-5 control-label">Interest Rate</label>
+        <div class="col-md-7">
+            <p class="form-control-static"><%= accountAPR.toFixed(2) %>%</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-5 control-label">Funding Method</label>
+        <div class="col-md-7">
+            <p class="form-control-static"><%= summary %></p>
+        </div>
+    </div>
+</div>

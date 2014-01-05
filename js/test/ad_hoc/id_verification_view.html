@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet/less" type="text/css" href="/js/app/less/style.less">
+    <script type="text/javascript">
+        less = {
+            env: "development", // or "production"
+            async: false,       // load imports async
+            fileAsync: false,   // load imports async when in a page under
+            // a file protocol
+            poll: 1000,         // when in watch mode, time in ms between polls
+            functions: {},      // user functions, keyed by name
+            dumpLineNumbers: "comments", // or "mediaQuery" or "all"
+            relativeUrls: false // whether to adjust url's to be relative
+            // if false, url's are already relative to the
+            // entry less file
+        };
+    </script>
+    <script src="/js/app/less/less.js"></script>
+</head>
+<body>
+    <div class="quiz-holder"></div>
+</body>
+    <script src="/js/app/config-require.js"></script>
+    <script data-main="../test/ad_hoc/quiz-test" src="/js/vendor/js/libs/require.js"></script>
+</html>

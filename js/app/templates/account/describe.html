@@ -1,0 +1,64 @@
+<div class="section account account1">
+    <div class="account-setting row">
+
+        <div class="col-md-3 rateSection hide">
+            <div class="rate-box">
+            	<div class="pull-right">
+            		<button type="button" class="remove-account btn btn-default btn-xs removeAccount hide">Remove</button>
+            	</div>
+                <h3 class="rateHeader"></h3>
+                <div class="rate rate-hero">
+	             	<div class="rate-group"><span class="number apyValue"></span><span class="pc">%</span> <span class="apy">ANNUAL<br>PERCENTAGE<br>YIELD (APY)</span></div>
+	               <p><span class="aprValue"></span>% Interest Rate</p>
+	            <!--   <p></p> -->
+	             </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3 col-md-offset-1 col-md-offset-4 productSelectionDiv">
+            <div class="type-amount-inputs">
+
+                <div class="account-type form-group-set row accountTypeGroup">
+                    <div class="form-group col-md-12">
+                        <label class="control-label">Account Type</label>
+                        <select class="form-control accountTypeSelect">
+                            <option value="">Please Select</option>
+                        </select>
+                        <!-- error -->
+                        <div class="form-group-error has-error accountType hide">
+                            <small class="help-block">Select an Account type.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="cd-account-term form-group-set row accountTerm hide">
+                    <div class="form-group col-md-12">
+                        <label class="control-label "><span class="termSelectHeader"></span> Term</label>
+                        <select class="form-control accountTermSelect">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="amount-to-fund form-group-set row hide fundingAmountGroup">
+                    <div class="form-group col-md-12">
+                        <label class="control-label">Opening Deposit Amount</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input type="text" class="form-control fundingAmount" placeholder="0.00">
+                        </div>
+                        <div class="form-group-error has-error fundingAmountError hide">
+                            <small class="help-block">$0 minimum.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-md-offset-1 featuresSection hide">
+            <div class="account-promo">
+
+              <ul class="featuresList"></ul>
+
+            </div>
+        </div>
+    </div>
+</div>

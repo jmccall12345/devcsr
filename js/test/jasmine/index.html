@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>GE OAO POC Jasmine Test Suite</title>
+
+  <!-- Jasmine styles -->
+  <link rel="stylesheet" href="vendor/jasmine.css">
+    <link rel="stylesheet/less" type="text/css" href="../../../assets/less/style.less">
+    <script type="text/javascript">
+        less = {
+            env: "development", // or "production"
+            async: false,       // load imports async
+            fileAsync: false,   // load imports async when in a page under
+            // a file protocol
+            poll: 1000,         // when in watch mode, time in ms between polls
+            functions: {},      // user functions, keyed by name
+            dumpLineNumbers: "comments", // or "mediaQuery" or "all"
+            relativeUrls: false // whether to adjust url's to be relative
+            // if false, url's are already relative to the
+            // entry less file
+        };
+    </script>
+    <script src="../../vendor/js/libs/less.js"></script>
+</head>
+
+<body>
+<div id="test-fixture"></div>
+  <!-- Testing libs -->
+  <script src="vendor/jasmine.js"></script>
+  <script src="vendor/jasmine-html.js"></script>
+  <script src="../../app/config-require.js" ></script>
+  <script src="../../vendor/js/libs/require.js"></script>
+
+  <!-- Declare your spec files to be run here -->
+  <script>
+      require.config({
+          baseUrl: "../../app/"
+      });
+
+    // since the base directory is app/, we need to prefix dirs w/ ../test/
+    require(
+      { paths: { spec: "../test/jasmine/spec", helper: "../test/jasmine/helper" } },
+      [
+        "spec/router",
+        "spec/topnav",
+        "spec/product",
+        "spec/account",
+        "spec/owner"
+      ],
+      function() {
+        // Set up the jasmine reporters once each spec has been loaded
+        jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+        jasmine.getEnv().execute();
+      });
+  </script>
+</body>
+</html>

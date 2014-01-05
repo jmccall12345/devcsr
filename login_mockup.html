@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>login</title>
+    <link rel="stylesheet/less" type="text/css" href="assets/less/style.less">
+    <script type="text/javascript">
+        less = {
+            env: "development", // or "production"
+            async: false,       // load imports async
+            fileAsync: false,   // load imports async when in a page under
+            // a file protocol
+            poll: 1000,         // when in watch mode, time in ms between polls
+            functions: {},      // user functions, keyed by name
+            dumpLineNumbers: "comments", // or "mediaQuery" or "all"
+            relativeUrls: false // whether to adjust url's to be relative
+            // if false, url's are already relative to the
+            // entry less file
+        };
+    </script>
+    <script src="js/vendor/js/libs/less.js"></script>
+</head>
+<body>
+<div class="modal-content">
+    <div class="modal-header">
+        <h3 id="signInModalLabel_<%= cid %>">Sign In</h3>
+        <p>Enter your  Username below.</p>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <fieldset class="row">
+                <div class="col-md-10 col-md-offset-1">
+
+                    <!-- Username (standard) -->
+                    <div class="form-group-set row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="signin-username" class="control-label">Username</label>
+                                    <div class="input-group">
+                                        <input type="text" id="signin-username" class="form-control">
+                                        <span class="input-group-btn"><a href="" class="btn btn-link">Forgot Username</a></span>
+                                    </div>
+                                    <small class="help-block muted">You&rsquo;ll enter your Password in the next step of the sign-in process.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="actions">
+            <a class="btn btn-link" data-dismiss="modal" aria-hidden="true">Cancel</a>
+            <button class="btn btn-primary" onclick="window.close();return false;">Continue</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

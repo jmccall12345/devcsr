@@ -1,0 +1,48 @@
+<div class="page-header">
+    <h1>Fund Account(s)</h1>
+    <p class="lead"><strong><%= fullName %></strong>, now that you&rsquo;ve successfully opened your new Account(s), please choose a funding method(s) from the options below.</p>
+</div>
+<!-- :END: Page Header -->
+
+<div class="alert alert-danger fade in hide fundingErrorsAlert">
+    <p>Funding for your account(s) is not complete. Please enter all funding information and submit.</p>
+</div>
+
+<div class="fund-accounts">
+</div>
+
+<div class="actions actions-page clearfix">
+    <div class="pull-right">
+        <button class="btn btn-primary btn-lg navigateComplete">Submit</button>
+    </div>
+</div>
+
+<div id="accountPendingInfo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="trialDepositsLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="trialDepositsLabel_<%= cid %>">Trial Deposits</h3>
+                <p>Before we are able to transfer funds from your registered account, we&rsquo;ll need to make some trial deposits to that account to verify that you are the account owner.</p>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <p>Here&rsquo;s how it works:</p>
+                    <ul>
+                        <li>We&rsquo;ll make two small trial deposits into your external bank account (such as .01 or .06 cents.)</li>
+                        <li>You&rsquo;ll receive an email within 2-3 business days confirming the trial deposits have been made.</li>
+                        <li>Check your external account to verify the deposits are there. You&rsquo;ll see them as credits.</li>
+                        <li>Sign in</li>
+                        <li>Click on &ldquo;Funds Transfer&rdquo; and then the &ldquo;Verify Trial Deposits&rdquo; button</li>
+                    </ul>
+                    <p>We will verify your [Bank Name] account using trial deposits (this can take 2-3 business days). Please select Continue to confirm.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="actions">
+                    <a class="btn btn-link" data-dismiss="modal" aria-hidden="true">Cancel</a>
+                    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

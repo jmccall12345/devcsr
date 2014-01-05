@@ -1,0 +1,18 @@
+<div class="form-group-set row">
+    <div class="radio-group col-md-12">
+        <h5><%= description %></h5>
+        <%
+        _.each(answers, function(answer) {
+            //var checked = _.contains(associatedAccountCIDs, account.cid) ? "checked" : "";
+        %>
+        <div class="radio">
+            <label>
+                <input type="radio" name="question_<%= cid %>" value="<%= answer.id %>">
+                <span class="slick"><span></span><%= answer.description %></span>
+            </label>
+        </div>
+        <%
+        });
+        %>
+    </div>
+</div>

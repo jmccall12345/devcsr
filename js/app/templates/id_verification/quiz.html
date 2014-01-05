@@ -1,0 +1,29 @@
+<div id="identityAuth_<%= cid %>" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="identityAuthLabel_<%= cid %>" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
+                <h3 id="identityAuthLabel_<%= cid %>">Confirm your Identity</h3>
+                <p>In order to help us confirm your identity, please answer the following questions. This information is provided to us by a third-party credit reporting agency to protect your identity.</p>
+                <p>Please answer the questions below.</p>
+            </div>
+            <div class="modal-body">
+
+                <div class="container">
+                    <h4><span class="modalOwnerName"></span> <small class="modalOwnerType"><%= owner.fullName %></small></h4>
+
+                    <fieldset class="row">
+                        <div class="col-md-10 questionList"></div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="actions">
+                    <!-- navigateNext -->
+                    <button class="btn btn-primary submitQuiz disabled">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

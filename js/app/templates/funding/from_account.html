@@ -1,0 +1,122 @@
+<header>
+    <p class="lead"><strong>Fund Now</strong> Electronic transfer from an existing checking/savings account</p>
+
+</header>
+<fieldset class="row">
+    <div class="col-md-12">
+        <!-- Accounts (standard) -->
+        <div class="form-group-set row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="form-group col-md-10 selectAccountGroup">
+                        <label class="control-label">Accounts</label>
+                        <div class="input-group">
+                            <select class="form-control fundingAccount"></select>
+                            <span class="input-group-btn hide launchTrialDepositInfoEl"><a href="#accountPendingInfo" class="btn btn-link" data-toggle="modal">What does bank account "pending" mean?</a></span>
+                        </div>
+                        <!-- error -->
+                        <div class="form-group-error has-error hide selectAccountError">
+                            <small class="help-block">Please select an account.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+
+<!-- :BEGIN: Add New Funding Account -->
+<fieldset class="newAccount row hide" style="overflow: hidden; display: block;">
+    <div class="col-md-6">
+        <!-- Routing Number (standard) -->
+        <div class="form-group-set row routingNumGroup">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="routing-number_<%= cid %>" class="control-label">Routing Number</label>
+                        <input type="text" id="routing-number_<%= cid %>" name="routing-number_<%= cid %>" class="form-control routingNumberInput" maxlength="9">
+                        <small class="help-block text-muted">Enter the 9-digit bank routing number (sometimes referred to as the 'ABA Routing Number') associated with your account. You can find your routing number on a check issued by your bank as shown in the picture.
+                        </small>
+                        <div class="form-group-error has-error hide routingNumError">
+                            <small class="help-block">Enter your 9-digit bank routing number.</small>
+                        </div>
+                        <div class="form-group-success hide verifiedBankSection">
+                            <span class="help-block verifiedBankLabel">
+                                <i class="glyphicon glyphicon-ok text-success"></i>
+                                <strong>Bank Verified:</strong> <span class="verifiedBankName"></span>
+                            </span>
+                            <span class="help-block invalidBankLabel">
+                                <i class="glyphicon glyphicon-remove text-danger"></i> Invalid Routing Number
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Account Number (standard) -->
+        <div class="form-group-set row accountNumGroup">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="account-number_<%= cid %>" class="control-label">Account Number</label>
+                        <input type="text" id="account-number_<%= cid %>" name="account-number_<%= cid %>" class="form-control accountNumber" maxlength="17" disabled="disabled">
+                        <!-- error -->
+                        <div class="form-group-error has-error hide accountNumError">
+                            <small class="help-block">Enter your bank account number.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Account Number Again (standard) -->
+        <div class="form-group-set row accountNum2Group">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="account-number-again_<%= cid %>" class="control-label">Re-enter Account Number</label>
+                        <input type="text" id="account-number-again_<%= cid %>" name="account-number-again_<%= cid %>" class="form-control accountNumberAgain" maxlength="17" disabled="disabled">
+                        <!-- error -->
+                        <div class="form-group-error has-error hide accountNum2Error">
+                            <small class="help-block">Account Numbers do not match.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Account Number Again (standard) -->
+        <div class="form-group-set row accountTypeGroup">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="control-label">Account Type</label>
+                        <select class="form-control accountType" id="account-type_<%= cid %>" disabled="disabled">
+                            <option value="">Please Select</option>
+                            <option value="Checking">Checking Account</option>
+                            <option value="Savings">Savings Account</option>
+                        </select>
+                        <!-- error -->
+                        <div class="form-group-error has-error hide accountTypeError">
+                            <small class="help-block">Select your account type.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="actions">
+            <button type="button" class="btn btn-primary verifyButton">Verify My Bank Account</button>
+        </div>-->
+
+    </div>
+
+    <!-- Check Sample Column -->
+    <div class="col-md-6">
+        <h5>Where to find bank routing and account numbers</h5>
+        <img src="../assets/img/check_sample.png" class="img-responsive" alt="">
+    </div>
+
+</fieldset>
+<!-- :END: Add New Funding Account -->
